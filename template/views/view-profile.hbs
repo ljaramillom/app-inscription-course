@@ -1,0 +1,28 @@
+{{> head }}
+{{> navbar }}
+<div class="container p-4">
+  <div class="col-md-12"><br>
+    <h1>Mi Perfil</h1>
+    <br>
+    <div class="row cards" style="width: auto; margin: auto auto;">
+      <div class="card mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="data:img/png;base64,{{imagen}}" class="card-img mt-3 mb-3" alt="imagen" style="max-width: 18rem;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h1 class="card-title">{{nombre}}&nbsp;{{apellido}}</h1>
+              <p class="card-text"><strong>Documento de Identidad:</strong>&nbsp;{{documento}}</p>
+              <p class="card-text"><strong>Correo Electrónico:</strong>&nbsp;{{correo}}</p>
+              <p class="card-text"><strong>Teléfono:</strong>&nbsp;{{telefono}}</p>
+              <p class="card-text"><strong>Curso Inscrito:</strong>&nbsp;{{curso}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br><br>
+{{> footer }}
