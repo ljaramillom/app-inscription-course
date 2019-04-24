@@ -38,7 +38,7 @@ const usuarioSchema = new Schema({
     role: {
         type: String,
         required: true,
-        default: 'aspirante'
+        default: 'estudiante'
     },
     curso: {
         type: String,

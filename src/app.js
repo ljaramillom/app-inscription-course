@@ -2,7 +2,7 @@ require('./config/config');
 // session
 const session = require('express-session');
 const MemoryStore = require('memorystore')(session);
-//express
+// express
 const express = require('express');
 const app = express();
 // path
@@ -12,8 +12,11 @@ const bodyParser = require('body-parser');
 // mongoose
 const mongoose = require('mongoose');
 // paths
-const dirPublic = path.join(__dirname, "../public")
-const dirNode_modules = path.join(__dirname, '../node_modules')
+const dirPublic = path.join(__dirname, "../public");
+const dirNode_modules = path.join(__dirname, '../node_modules');
+// server socket.io
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
 
 // static
 app.use(express.static(dirPublic));
@@ -58,7 +61,16 @@ app.use((req, res, next) => {
 
 console.log(__dirname);
 
+// sockets
+io.on('connection', client => {
+    console.log('User connected with Sockets');
+    client.on("texto", (texto, callback) => {
+        io.emit("texto", (texto))
+        callback()
+    });
+});
+
 // port
-app.listen(process.env.PORT, () => {
+server.listen(process.env.PORT, () => {
     console.log('Server on port ' + process.env.PORT)
 });

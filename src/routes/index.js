@@ -19,7 +19,6 @@ const Usuario = require('../models/usuarios');
 const bcrypt = require('bcrypt');
 // multer
 const multer = require('multer');
-// const upload = multer({});
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 
