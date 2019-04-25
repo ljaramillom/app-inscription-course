@@ -3,26 +3,78 @@
 
 <head>
     <meta charset="UTF-8">
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1rem
+        }
+        
+        .content-box-green {
+            background-color: #d9edc2;
+            border: 1px solid #b2ce96;
+            position: relative;
+            margin: auto;
+            max-width: 500px;
+            max-height: 100px;
+        }
+        
+        .align-text {
+            text-align: center;
+        }
+        
+        .mb {
+            margin-bottom: 15px;
+        }
+        
+        .mtbl {
+            margin-bottom: 15px;
+            margin-top: 15px;
+            margin-left: 5px;
+        }
+        
+        .msg {
+            background-color: #d9edc2;
+            border: 1px solid #b2ce96;
+            position: relative;
+            margin-top: 50px;
+            width: 500px;
+            height: 300px;
+        }
+        
+        .form {
+            margin-left: 15px;
+        }
+    </style>
     <title>Node.js</title>
 </head>
 
 <body>
-    <div>
+    <div class="mb">
         <a href="/home">Volver</a>
     </div>
-    <h1>Sala de Chat</h1>
-    <br>
-    <div id="messages"></div>
-    <br>
-    <form id="formulario">
-        <input type="text" id="username" placeholder="Nickname">
-        <input type="text" id="texto" placeholder="Mensaje">
-        <button>Enviar</button>
-    </form>
+    <div class="align-text">
+        <h1>Sala de Chat</h1>
+    </div>
+    <div class="content-box-green">
+        <div class="mtbl">
+            <label>Ingresa un nickname y un mensaje para comenzar:</label>
+        </div>
+        <div class="form">
+            <form id="formulario">
+                <input type="text" id="username" placeholder="Nickname">
+                <input type="text" id="texto" placeholder="Mensaje">
+                <button>Enviar</button>
+            </form>
+        </div>
 
-    <script src="socket.io/socket.io.js"></script>
-    <script src="js/main.js"></script>
+        <div class="msg">
+            <div class="mtbl" id="messages"></div>
+        </div>
 
+        <script src="socket.io/socket.io.js"></script>
+        <script src="js/main.js"></script>
+
+    </div>
 </body>
 
 </html>
